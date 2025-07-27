@@ -1,0 +1,29 @@
+@import "tailwindcss";
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "Black";
+  src: url("assets/fonts/Roboto-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Light";
+  src: url("public/assets/fonts/SpaceGrotesk-Light.ttf") format("truetype");
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Regular";
+  src: url("/assets/fonts/SpaceGrotesk-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
