@@ -3,6 +3,7 @@ import AButton from "../Components/AButton";
 import { images } from "../constants";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import Footer from "./Footer";
 
 const BestSellers = () => {
   const [modal, setModal] = useState({ active: false, index: 0 });

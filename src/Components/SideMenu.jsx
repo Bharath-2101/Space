@@ -100,7 +100,7 @@ const SideMenu = () => {
         <svg
           height="8vh"
           width="8vh"
-          className="bg-[#8E755D] rounded-full p-[1vh]"
+          className="bg-[#d3965d] rounded-full p-[1vh]"
           viewBox="0 0 100 100"
         >
           <line
@@ -130,9 +130,9 @@ const SideMenu = () => {
         className="fixed top-0 right-0 h-screen w-[500px] flex z-40"
       >
         <svg className="h-screen w-[100px]">
-          <path id="curve" d={exit} fill="#8E755D" />
+          <path id="curve" d={exit} fill="#d3965d" />
         </svg>
-        <div className="bg-[#8E755D] text-white p-8 flex flex-col gap-6 pt-[10vh] w-[400px]">
+        <div className="bg-[#d3965d] text-white p-8 flex flex-col gap-6 pt-[10vh] w-[400px]">
           <div className="text-[2vh] text-[#ffffffad] font-[Regular] font-black mb-4 p-[5%] text-center border-b-2 border-[#ffffff1c]">
             <h2>Navigation</h2>
           </div>
