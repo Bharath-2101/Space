@@ -65,15 +65,19 @@ const BestSellers = () => {
     }
   }, [modal.active]);
   return (
-    <div ref={mainRef} id="Best-Sellers" className="relative w-full pb-[20vh]">
+    <div
+      ref={mainRef}
+      id="Best-Sellers"
+      className="relative w-full md:pb-[20vh]"
+    >
       <div className="h-[20vh] w-full flex flex-row items-center justify-between px-[5vw]">
-        <h1 className="font-black font-[Regular] text-[6vh] text-[#d3965d]">
+        <h1 className="font-black font-[Regular] text-[3vh] md:text-[6vh] text-[#d3965d]">
           BEST SELLERS
         </h1>
         <AButton
           text="Explore"
           hoverColor="white"
-          className=" bg-[#d3965d] border-2 hover:text-[#d3965d] border-[#00000050] text-white py-[1.2vh] text-[4vh] font-[Regular] px-[3vw] text-center rounded-full"
+          className=" bg-[#d3965d] border-2 hover:text-[#d3965d] border-[#00000050] text-white py-[1.2vh] md:text-[4vh] font-[Regular] px-[3vw] text-center rounded-full"
         />
       </div>
       <div className={`w-full flex flex-col relative cursor-pointer`}>
@@ -90,11 +94,17 @@ const BestSellers = () => {
                 borderBottomWidth: 2,
                 borderColor: "#d3965d50",
               }}
-              className="w-[80%] py-[5vh]"
+              className="flex flex-row justify-between items-center w-[80%] py-[5vh]"
             >
-              <h1 className="font-[Regular] font-black text-[4vh]">
+              <h1 className="font-[Regular] font-black text-[2vh] md:text-[4vh]">
                 {item.title}
               </h1>
+              <img
+                src={item.image}
+                style={{ aspectRatio: 16 / 9 }}
+                alt=""
+                className="md:hidden h-[7vh] rounded-xl"
+              />
             </div>
           </div>
         ))}

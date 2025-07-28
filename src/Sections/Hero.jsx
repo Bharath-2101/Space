@@ -23,6 +23,7 @@ const Hero = () => {
       type: "chars words",
       mask: "words",
     });
+
     gsap.from(descWords.words, {
       scrollTrigger: {
         trigger: messRef.current,
@@ -53,8 +54,8 @@ const Hero = () => {
 
   return (
     <>
-      <div id="Home" className="h-[100vh] w-[100vw] flex flex-col ">
-        <div className="h-[10vh] w-full px-[2vw] py-[2vh] overflow-visible">
+      <div id="Home" className="min-h-[100svh] w-full flex flex-col">
+        <div className="h-[10vh] w-full px-[2vw] py-[2vh]">
           <Magnetic className="h-full w-auto">
             <img
               src={images.TextwithLogo}
@@ -64,43 +65,54 @@ const Hero = () => {
           </Magnetic>
         </div>
 
-        <div className="py-[5vh] px-[2vw] font-[Regular] grid grid-cols-[9fr_11fr]">
-          <div className="flex flex-col gap-[3vh] px-2">
+        <div className="flex flex-col md:grid md:grid-cols-2 md:grid-rows-none px-[2vw] py-[5vh] gap-y-8 md:gap-0 font-[Regular]">
+          <div className="flex flex-col items-center md:items-start gap-[3vh] md:gap-[5vh] order-2 md:order-1">
             <h1
               ref={heroTitle}
-              className="w-full text-[10vh] font-black text-[#d3965d] font-[Black] leading-17 "
+              className="w-[90%] md:w-full text-center md:text-left font-black text-[#d3965d] font-[Black]"
+              style={{
+                fontSize: "clamp(2rem, 6vw, 8vh)",
+                lineHeight: "1.1",
+              }}
             >
               Timeless Design Everyday Comfort.
             </h1>
+
             <p
               ref={heroDesc}
-              className="w-full font-[Regular] font-[500] text-[3vh] text-[#898989] ml-[2%]"
+              className="w-[90%] md:w-full text-center md:text-left font-[Regular] font-medium text-[#898989]"
+              style={{
+                fontSize: "clamp(1rem, 2.5vw, 3vh)",
+              }}
             >
-              Modern element meeting last longing comfort. Our Furniture is
+              Modern element meeting long-lasting comfort. Our Furniture is
               crafted to inspire and designed for your contemporary life.
             </p>
-            <div className="w-[90%] flex flex-row items-center gap-[3%] mt-[15%] justify-center">
+
+            <div className="flex flex-row gap-4 mt-[5vh] md:mt-[10vh] w-[90%] md:w-full justify-center ">
               <AButton
-                className="bg-[#d3965d] w-[30%] py-[1.7vh] border-2 border-[#00000050] rounded-4xl text-white hover:text-[#d3965d]"
+                className="bg-[#d3965d] w-full md:w-[30%] py-3 border-2 border-[#00000050] rounded-3xl text-white hover:text-[#d3965d]"
                 text="SHOP MORE"
                 hoverColor="white"
               />
               <AButton
-                className="bg-[#d3965d] w-[30%] py-[1.7vh] border-2 border-[#00000050] rounded-4xl text-white hover:text-[#d3965d]"
+                className="bg-[#d3965d] w-full md:w-[30%] py-3 border-2 border-[#00000050] rounded-3xl text-white hover:text-[#d3965d]"
                 text="LEARN MORE"
                 hoverColor="white"
               />
             </div>
           </div>
-          <div className="overflow-hidden w-full h-full">
+
+          <div className="overflow-hidden w-full h-full order-1 md:order-2">
             <img
               src={images.heroImage}
               alt="Hero Furniture"
-              className="h-full w-full object-contain rounded-2xl"
+              className="w-full h-full object-contain rounded-2xl"
             />
           </div>
         </div>
       </div>
+
       <MessageContainer messRef={messRef} descRef={descRef} />
     </>
   );
