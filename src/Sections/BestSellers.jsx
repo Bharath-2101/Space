@@ -10,14 +10,14 @@ const BestSellers = () => {
   const container = useRef(null);
   const mainRef = useRef(null);
   const items = [
-    { title: "Space Arm Chair", image: images.Armchair, color: "#4A403A" }, // Taupe brown
+    { title: "Space Arm Chair", image: images.Armchair, color: "#4A403A" },
     {
       title: "Space Living Room Sofa",
       image: images.CozySofa,
       color: "#2D2A26",
-    }, // Charcoal black
-    { title: "Space Soft Bed", image: images.CozyBed, color: "#B0AFA7" }, // Soft beige
-    { title: "Ignited Lamp", image: images.Lamp, color: "#D4C2A8" }, // Warm sand
+    },
+    { title: "Space Soft Bed", image: images.CozyBed, color: "#B0AFA7" },
+    { title: "Ignited Lamp", image: images.Lamp, color: "#D4C2A8" },
   ];
 
   useEffect(() => {
@@ -65,7 +65,7 @@ const BestSellers = () => {
     }
   }, [modal.active]);
   return (
-    <div ref={mainRef} className="relative w-full pb-[20vh]">
+    <div ref={mainRef} id="Best-Sellers" className="relative w-full pb-[20vh]">
       <div className="h-[20vh] w-full flex flex-row items-center justify-between px-[5vw]">
         <h1 className="font-black font-[Regular] text-[6vh] text-[#d3965d]">
           BEST SELLERS

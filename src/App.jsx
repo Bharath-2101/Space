@@ -4,12 +4,13 @@ import SideMenu from "./Components/SideMenu";
 import Category from "./Sections/Category";
 import gsap from "gsap";
 import MorphSVGPlugin from "gsap/MorphSVGPlugin";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import SplitText from "gsap/SplitText";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import BestSellers from "./Sections/BestSellers";
 import Footer from "./Sections/Footer";
 
-gsap.registerPlugin(MorphSVGPlugin, ScrollTrigger, SplitText);
+gsap.registerPlugin(MorphSVGPlugin, ScrollTrigger, SplitText, ScrollToPlugin);
 
 const App = () => {
   return (

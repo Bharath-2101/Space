@@ -1,12 +1,12 @@
 const images = {
-  heroImage: "/assets/images/HeroTable.png",
+  heroImage: "/assets/images/HeroTable.webp",
   TextwithLogo: "/assets/images/SpaceTextLogo.svg",
-  chair: "/assets/images/Chair.png",
-  Drawer: "/assets/images/Drawer.png",
-  Lamp: "/assets/images/Lamp.png",
-  Armchair: "/assets/images/Armchair.png",
-  CozySofa: "/assets/images/CozySofa.png",
-  CozyBed: "/assets/images/CozyBed.png",
+  chair: "/assets/images/Chair.webp",
+  Drawer: "/assets/images/Drawer.webp",
+  Lamp: "/assets/images/Lamp.webp",
+  Armchair: "/assets/images/Armchair.webp",
+  CozySofa: "/assets/images/CozySofa.webp",
+  CozyBed: "/assets/images/CozyBed.webp",
 };
 
 export { images };

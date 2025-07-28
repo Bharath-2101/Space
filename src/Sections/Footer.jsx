@@ -3,7 +3,10 @@ import { images } from "../constants";
 
 const Footer = () => {
   return (
-    <div className="h-[100dvh] w-full grid grid-rows-[1fr_1fr] bg-[#030718f3] text-[#ffffff] px-8 py-12">
+    <div
+      id="Contact"
+      className="h-[100dvh] w-full grid grid-rows-[1fr_1fr] bg-[#030718f3] text-[#ffffff] px-8 py-12"
+    >
       <div className="grid grid-cols-1 md:grid-cols-[3fr_1fr_1fr] gap-8">
         <div className="flex  flex-col">
           <h3 className="text-[6vh] font-black mb-4 text-[#d3965d] font-[Regular]">

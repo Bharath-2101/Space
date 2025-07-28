@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import gsap from "gsap";
 import MorphSVGPlugin from "gsap/MorphSVGPlugin";
+import Hamburger from "./Hamburger";
 
 gsap.registerPlugin(MorphSVGPlugin);
 
@@ -12,6 +13,30 @@ const SideMenu = () => {
   const h = window.innerHeight;
   const inital = `M100 0 L100 ${h} Q100 ${h / 2} 100 0`;
   const exit = `M100 0 L100 ${h} Q-100 ${h / 2} 100 0`;
+
+  const navLinks = [
+    { title: "Home", id: "#Home" },
+    { title: "Shop", id: "#Best-Sellers" },
+    { title: "About", id: "#Contact" },
+    { title: "Contact", id: "#Contact" },
+  ];
+
+  const handleNavClick = (id) => {
+    const targetEl = document.querySelector(id);
+    if (!targetEl) return;
+
+    const targetY = targetEl.getBoundingClientRect().top + window.scrollY;
+    const currentY = window.scrollY;
+    const distance = Math.abs(targetY - currentY);
+
+    const duration = Math.min(2, Math.max(0.3, distance / 1500));
+
+    gsap.to(window, {
+      scrollTo: { y: targetEl, offsetY: 0 },
+      duration,
+      ease: "cubic-bezier(0.76, 0, 0.24, 1)",
+    });
+  };
 
   const handleClick = () => {
     const tl = gsap.timeline({
@@ -97,33 +122,7 @@ const SideMenu = () => {
         className="fixed top-[2vh] right-[2vw] cursor-pointer z-100 "
         onClick={handleClick}
       >
-        <svg
-          height="8vh"
-          width="8vh"
-          className="bg-[#d3965d] rounded-full p-[1vh]"
-          viewBox="0 0 100 100"
-        >
-          <line
-            ref={topLine}
-            x1="25"
-            y1="40"
-            x2="75"
-            y2="40"
-            stroke="white"
-            strokeWidth="6"
-            strokeLinecap="round"
-          />
-          <line
-            ref={bottomLine}
-            x1="25"
-            y1="60"
-            x2="75"
-            y2="60"
-            stroke="white"
-            strokeWidth="6"
-            strokeLinecap="round"
-          />
-        </svg>
+        <Hamburger topLine={topLine} bottomLine={bottomLine} />
       </div>
       <div
         ref={sideMenuRef}
@@ -137,13 +136,15 @@ const SideMenu = () => {
             <h2>Navigation</h2>
           </div>
           <ul className="flex flex-col gap-4 text-lg">
-            {["Home", "Shop", "About", "Contact"].map((item, index) => (
+            {navLinks.map((item, index) => (
               <li
                 key={index}
-                className=" group cursor-pointer relative flex items-center text-[5vh] font-black font-[Regular] gap-3"
+                className="group cursor-pointer relative flex items-center gap-3 text-[5vh] font-black font-[Regular]"
+                onClick={() => handleNavClick(item.id)}
               >
-                <span className="h-3 w-3 rounded-full bg-white inline-block scale-0 opacity-0 group-hover:opacity-100 group-hover:scale-100 transition-all duration-500" />
-                <span>{item}</span>
+                <span className="h-3 w-3 rounded-full bg-white inline-block transform scale-0 opacity-0 group-hover:opacity-100 group-hover:scale-100 transition-all duration-500" />
+
+                <span>{item.title}</span>
               </li>
             ))}
           </ul>
