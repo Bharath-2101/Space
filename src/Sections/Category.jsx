@@ -91,7 +91,7 @@ const Category = () => {
                 ? "polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%)"
                 : "none",
           }}
-          className="cat min-w-96 min-h-[30vh] md:h-[60%] rounded-4xl relative p-[2%] flex flex-col justify-between shadow-[0px_2px_4px_#00000050] hover:scale-101 hover:shadow-[0px_4px_20px_#00000050] cursor-pointer transition-all duration-500"
+          className="cat  min-w-[90vw] md:min-w-96 min-h-[30vh] md:h-[60%] rounded-4xl relative p-[2%] flex flex-col justify-between shadow-[0px_2px_4px_#00000050] hover:scale-101 hover:shadow-[0px_4px_20px_#00000050] cursor-pointer transition-all duration-500"
         >
           <h1 className="w-full text-[#ffffff] font-[Regular] font-black text-[4.5vh]">
             {item.title}
