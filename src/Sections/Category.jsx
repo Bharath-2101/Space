@@ -91,12 +91,12 @@ const Category = () => {
                 ? "polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%)"
                 : "none",
           }}
-          className="cat  min-w-[90vw] md:min-w-96 min-h-[30vh] md:h-[60%] rounded-4xl relative p-[2%] flex flex-col justify-between shadow-[0px_2px_4px_#00000050] hover:scale-101 hover:shadow-[0px_4px_20px_#00000050] cursor-pointer transition-all duration-500"
+          className="cat  min-w-[90vw] md:min-w-96 min-h-[30vh] md:h-[60%] rounded-4xl relative p-[4%] md:p-[2%] flex flex-col justify-between shadow-[0px_2px_4px_#00000050] hover:scale-101 hover:shadow-[0px_4px_20px_#00000050] cursor-pointer transition-all duration-500"
         >
-          <h1 className="w-full text-[#ffffff] font-[Regular] font-black text-[4.5vh]">
+          <h1 className="w-full text-[#ffffff] font-[Regular] font-black text-[3vh] md:text-[4.5vh]">
             {item.title}
           </h1>
-          <h1 className="bg-white w-[15%] text-[3.8vh] p-[1%] text-center rounded-xl">
+          <h1 className="bg-white w-[15%] text-[2.5vh]  md:text-[3.8vh] p-[1%] text-center rounded-xl">
             {index + 1 < 10 ? "0" + (index + 1) : index + 1}
           </h1>
         </div>

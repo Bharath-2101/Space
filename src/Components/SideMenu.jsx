@@ -137,14 +137,14 @@ const SideMenu = () => {
           </div>
           <ul className="flex flex-col gap-4 text-lg">
             {navLinks.map((item, index) => (
-              <li
-                key={index}
-                className="group cursor-pointer relative flex items-center gap-3 text-[5vh] font-black font-[Regular]"
-                onClick={() => handleNavClick(item.id)}
-              >
-                <span className="h-3 w-3 rounded-full bg-white inline-block transform scale-0 opacity-0 group-hover:opacity-100 group-hover:scale-100 transition-all duration-500" />
-
-                <span>{item.title}</span>
+              <li key={index}>
+                <button
+                  onClick={() => handleNavClick(item.id)}
+                  className="group cursor-pointer relative flex items-center gap-3 text-[5vh] font-black font-[Regular] focus:outline-none"
+                >
+                  <span className="h-3 w-3 rounded-full bg-white inline-block transform scale-0 opacity-0 group-hover:opacity-100 group-hover:scale-100 transition-all duration-500" />
+                  <span>{item.title}</span>
+                </button>
               </li>
             ))}
           </ul>

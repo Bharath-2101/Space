@@ -19,9 +19,11 @@ const BestSellers = () => {
     { title: "Space Soft Bed", image: images.CozyBed, color: "#B0AFA7" },
     { title: "Ignited Lamp", image: images.Lamp, color: "#D4C2A8" },
   ];
-
   useEffect(() => {
     const el = container.current;
+
+    const mediaQuery = window.matchMedia("(min-width: 1024px)");
+    if (!mediaQuery.matches) return;
 
     const moveContainerX = gsap.quickTo(el, "left", {
       duration: 0.5,
@@ -50,18 +52,24 @@ const BestSellers = () => {
   }, []);
 
   useEffect(() => {
-    if (modal.active) {
-      gsap.to(container.current, {
-        scale: 1,
+    const el = container.current;
+    const width = window.innerWidth;
+
+    if (width >= 1024) {
+      gsap.to(el, {
+        scale: modal.active ? 1 : 0,
         duration: 0.5,
-        ease: "cubic - bezier(0.76, 0, 0.24, 1)",
+        ease: "cubic-bezier(0.76, 0, 0.24, 1)",
+      });
+    } else if (width >= 768) {
+      gsap.to(el, {
+        scale: modal.active ? 1 : 0,
+        opacity: modal.active ? 1 : 0,
+        duration: 0.4,
+        ease: "cubic-bezier(0.76, 0, 0.24, 1)",
       });
     } else {
-      gsap.to(container.current, {
-        scale: 0,
-        duration: 0.5,
-        ease: "cubic - bezier(0.76, 0, 0.24, 1)",
-      });
+      gsap.set(el, { scale: 0, opacity: 0 });
     }
   }, [modal.active]);
   return (

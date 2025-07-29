@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <div
       id="Contact"
-      className="h-[100dvh] w-full grid grid-rows-[1fr_1fr] bg-[#030718f3] text-[#ffffff] px-8 py-12"
+      className="h-[110dvh] md:h-[100dvh] w-full grid grid-rows-[1fr_1fr] bg-[#030718f3] text-[#ffffff] px-8 py-12"
     >
       <div className="grid grid-cols-1 md:grid-cols-[3fr_1fr_1fr] gap-8">
         <div className="flex  flex-col items-center md:items-start">
@@ -54,10 +54,10 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="w-full flex justify-center items-center relative">
+      <div className="w-full flex justify-center items-center relative gap-3">
         <img
           src={images.TextwithLogo}
-          className="h-[60%] object-center object-contain"
+          className="h-[10vh] md:h-[60%] object-center object-contain"
           alt="Text with Logo"
         />
         <div className="absolute bottom-4 left-[10%] w-[80%] text-center text-sm text-gray-400 ">
